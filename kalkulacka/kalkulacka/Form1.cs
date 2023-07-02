@@ -14,7 +14,7 @@ namespace kalkulacka
     {
         float PrvniCislo = 0;
         float DruheCislo = 0;
-        int operace = 0;
+        string operace = "";
 
         public Form1()
         {
@@ -155,9 +155,9 @@ namespace kalkulacka
 
         private void button12_Click(object sender, EventArgs e)
         {
-            operace = 1;
+            operace = "+";
             PrvniCislo = float.Parse(textBox1.Text);
-            label1.Text = PrvniCislo.ToString();
+            label1.Text = PrvniCislo.ToString()+operace;
             textBox1.Text = "";
         }
 
