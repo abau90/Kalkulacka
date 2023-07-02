@@ -177,19 +177,42 @@ namespace kalkulacka
             {
                 textBox1.Text = (PrvniCislo + DruheCislo).ToString();
             }
+            if (operace == "-")
+            {
+                textBox1.Text = (PrvniCislo - DruheCislo).ToString();
+            }
+            if (operace == "*")
+            {
+                textBox1.Text = (PrvniCislo * DruheCislo).ToString();
+            }
+            if (operace == "/")
+            {
+                textBox1.Text = (PrvniCislo / DruheCislo).ToString();
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
+            operace = "-";
+            PrvniCislo = float.Parse(textBox1.Text);
+            label1.Text = PrvniCislo.ToString() + operace;
+            textBox1.Text = "";
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
+            operace = "*";
+            PrvniCislo = float.Parse(textBox1.Text);
+            label1.Text = PrvniCislo.ToString() + operace;
+            textBox1.Text = "";
         }
 
         private void button14_Click_1(object sender, EventArgs e)
         {
-
+            operace = "/";
+            PrvniCislo = float.Parse(textBox1.Text);
+            label1.Text = PrvniCislo.ToString() + operace;
+            textBox1.Text = "";
         }
 
         private void button17_Click(object sender, EventArgs e)
