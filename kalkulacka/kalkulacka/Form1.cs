@@ -163,11 +163,20 @@ namespace kalkulacka
 
         private void button15_Click(object sender, EventArgs e)
         {
+            PrvniCislo = 0;
+            DruheCislo = 0;
+            label1.Text = "0";
+            textBox1.Text = "0";
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            
+            label1.Text = label1.Text + textBox1.Text;
+            DruheCislo = float.Parse(textBox1.Text);
+            if (operace == "+")
+            {
+                textBox1.Text = (PrvniCislo + DruheCislo).ToString();
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
