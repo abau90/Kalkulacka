@@ -12,7 +12,9 @@ namespace kalkulacka
 {
     public partial class Form1 : Form
     {
-        int CisloVBoxu = 0;
+        float PrvniCislo = 0;
+        float DruheCislo = 0;
+        int operace = 0;
 
         public Form1()
         {
@@ -22,7 +24,15 @@ namespace kalkulacka
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 1;
+            //testování zda nezačíná číslo nulou
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button1.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button1.Text;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -32,47 +42,110 @@ namespace kalkulacka
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 2;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button2.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button2.Text;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 3;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button3.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button3.Text;
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 4;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button6.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button6.Text;
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 5;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button5.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button5.Text;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 6;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button4.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button4.Text;
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 7;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button9.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button9.Text;
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 8;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button8.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button8.Text;
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 9;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button7.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button7.Text;
+            }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + 0;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = button10.Text;
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + button10.Text;
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -82,36 +155,32 @@ namespace kalkulacka
 
         private void button12_Click(object sender, EventArgs e)
         {
-            CisloVBoxu = CisloVBoxu + int.Parse(textBox1.Text);
+            operace = 1;
+            PrvniCislo = float.Parse(textBox1.Text);
+            label1.Text = PrvniCislo.ToString();
             textBox1.Text = "";
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            textBox1.Text = CisloVBoxu.ToString();
+            
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            CisloVBoxu = CisloVBoxu - int.Parse(textBox1.Text);
-            textBox1.Text = "";
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            CisloVBoxu = CisloVBoxu * int.Parse(textBox1.Text);
-            textBox1.Text = "";
         }
 
         private void button14_Click_1(object sender, EventArgs e)
         {
-            CisloVBoxu = CisloVBoxu / int.Parse(textBox1.Text);
-            textBox1.Text = "";
+
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -121,8 +190,8 @@ namespace kalkulacka
 
         private void button18_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            CisloVBoxu = 0;
+
         }
+
     }
 }
