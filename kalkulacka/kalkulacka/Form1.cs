@@ -199,7 +199,7 @@ namespace kalkulacka
 
         private void button18_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = "0";
         }
 
     }
