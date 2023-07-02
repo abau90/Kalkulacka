@@ -82,7 +82,8 @@ namespace kalkulacka
 
         private void button12_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + "+";
+            CisloVBoxu = CisloVBoxu + int.Parse(textBox1.Text);
+            textBox1.Text = "";
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -92,11 +93,36 @@ namespace kalkulacka
 
         private void button13_Click(object sender, EventArgs e)
         {
+            textBox1.Text = CisloVBoxu.ToString();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + "-";
+            CisloVBoxu = CisloVBoxu - int.Parse(textBox1.Text);
+            textBox1.Text = "";
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            CisloVBoxu = CisloVBoxu * int.Parse(textBox1.Text);
+            textBox1.Text = "";
+        }
+
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+            CisloVBoxu = CisloVBoxu / int.Parse(textBox1.Text);
+            textBox1.Text = "";
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            CisloVBoxu = 0;
         }
     }
 }
