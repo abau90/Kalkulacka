@@ -14,6 +14,7 @@ namespace kalkulacka
     {
         float PrvniCislo = 0;
         float DruheCislo = 0;
+        float vysledek = 0;
         string operace = "";
 
         public Form1()
@@ -157,7 +158,9 @@ namespace kalkulacka
         {
             operace = "+";
             PrvniCislo = float.Parse(textBox1.Text);
-            label1.Text = PrvniCislo.ToString()+operace;
+            vysledek = PrvniCislo + DruheCislo;
+            DruheCislo = vysledek;
+            label1.Text = vysledek.ToString()+operace;
             textBox1.Text = "";
         }
 
@@ -175,27 +178,33 @@ namespace kalkulacka
             DruheCislo = float.Parse(textBox1.Text);
             if (operace == "+")
             {
-                textBox1.Text = (PrvniCislo + DruheCislo).ToString();
+                textBox1.Text = (vysledek + DruheCislo).ToString();
             }
             if (operace == "-")
             {
-                textBox1.Text = (PrvniCislo - DruheCislo).ToString();
+                textBox1.Text = (vysledek - DruheCislo).ToString();
             }
             if (operace == "*")
             {
-                textBox1.Text = (PrvniCislo * DruheCislo).ToString();
+                textBox1.Text = (vysledek * DruheCislo).ToString();
             }
             if (operace == "/")
             {
-                textBox1.Text = (PrvniCislo / DruheCislo).ToString();
+                textBox1.Text = (vysledek / DruheCislo).ToString();
             }
+            label1.Text = "";
+            PrvniCislo = 0;
+            DruheCislo = 0;
+            vysledek = 0;
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             operace = "-";
             PrvniCislo = float.Parse(textBox1.Text);
-            label1.Text = PrvniCislo.ToString() + operace;
+            vysledek = PrvniCislo - DruheCislo;
+            DruheCislo = vysledek;
+            label1.Text = vysledek.ToString() + operace;
             textBox1.Text = "";
         }
 
@@ -203,7 +212,9 @@ namespace kalkulacka
         {
             operace = "*";
             PrvniCislo = float.Parse(textBox1.Text);
-            label1.Text = PrvniCislo.ToString() + operace;
+            vysledek = PrvniCislo * DruheCislo;
+            DruheCislo = vysledek;
+            label1.Text = vysledek.ToString() + operace;
             textBox1.Text = "";
         }
 
@@ -211,7 +222,9 @@ namespace kalkulacka
         {
             operace = "/";
             PrvniCislo = float.Parse(textBox1.Text);
-            label1.Text = PrvniCislo.ToString() + operace;
+            vysledek = PrvniCislo / DruheCislo;
+            DruheCislo = vysledek;
+            label1.Text = vysledek.ToString() + operace;
             textBox1.Text = "";
         }
 
