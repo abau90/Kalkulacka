@@ -26,13 +26,13 @@ namespace kalkulacka
         private void button1_Click(object sender, EventArgs e)
         {
             //testování zda nezačíná číslo nulou
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button1.Text;
+                label2.Text = button1.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button1.Text;
+                label2.Text = label2.Text + button1.Text;
             }
         }
 
@@ -43,109 +43,109 @@ namespace kalkulacka
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button2.Text;
+                label2.Text = button2.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button2.Text;
+                label2.Text = label2.Text + button2.Text;
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button3.Text;
+                label2.Text = button3.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button3.Text;
+                label2.Text = label2.Text + button3.Text;
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button6.Text;
+                label2.Text = button6.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button6.Text;
+                label2.Text = label2.Text + button6.Text;
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button5.Text;
+                label2.Text = button5.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button5.Text;
+                label2.Text = label2.Text + button5.Text;
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button4.Text;
+                label2.Text = button4.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button4.Text;
+                label2.Text = label2.Text + button4.Text;
             }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button9.Text;
+                label2.Text = button9.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button9.Text;
+                label2.Text = label2.Text + button9.Text;
             }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button8.Text;
+                label2.Text = button8.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button8.Text;
+                label2.Text = label2.Text + button8.Text;
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button7.Text;
+                label2.Text = button7.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button7.Text;
+                label2.Text = label2.Text + button7.Text;
             }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (label2.Text == "0")
             {
-                textBox1.Text = button10.Text;
+                label2.Text = button10.Text;
             }
             else
             {
-                textBox1.Text = textBox1.Text + button10.Text;
+                label2.Text = label2.Text + button10.Text;
             }
         }
 
@@ -156,12 +156,43 @@ namespace kalkulacka
 
         private void button12_Click(object sender, EventArgs e)
         {
-            operace = "+";
-            PrvniCislo = float.Parse(textBox1.Text);
-            vysledek = PrvniCislo + DruheCislo;
-            DruheCislo = vysledek;
-            label1.Text = vysledek.ToString()+operace;
-            textBox1.Text = "";
+               label1.Text = label1.Text + label2.Text;
+
+                DruheCislo = float.Parse(label2.Text);
+                if (operace == "+")
+                {
+                    label2.Text = (vysledek + DruheCislo).ToString();
+                    vysledek = PrvniCislo + DruheCislo;
+                }
+                if (operace == "-")
+                {
+                    label2.Text = (vysledek - DruheCislo).ToString();
+                    vysledek = PrvniCislo - DruheCislo;
+                }
+                if (operace == "*")
+                {
+                    label2.Text = (vysledek * DruheCislo).ToString();
+                    vysledek = PrvniCislo * DruheCislo;
+                }
+                if (operace == "/")
+                {
+                    label2.Text = (vysledek / DruheCislo).ToString();
+                    vysledek = PrvniCislo / DruheCislo;
+                }
+            if (operace == "")
+            {
+                operace = "+";
+                label1.Text = label2.Text + operace;
+                vysledek = float.Parse(label2.Text);
+            }
+            else
+            {
+                operace = "+";
+                label1.Text = vysledek.ToString() + operace;
+            } 
+            PrvniCislo = vysledek;
+            label2.Text = "";
+            label2.Text = "0";
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -169,28 +200,28 @@ namespace kalkulacka
             PrvniCislo = 0;
             DruheCislo = 0;
             label1.Text = "0";
-            textBox1.Text = "0";
+            label2.Text = "0";
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            label1.Text = label1.Text + textBox1.Text;
-            DruheCislo = float.Parse(textBox1.Text);
+            label1.Text = label1.Text + label2.Text;
+            DruheCislo = float.Parse(label2.Text);
             if (operace == "+")
             {
-                textBox1.Text = (vysledek + DruheCislo).ToString();
+                label2.Text = (vysledek + DruheCislo).ToString();
             }
             if (operace == "-")
             {
-                textBox1.Text = (vysledek - DruheCislo).ToString();
+                label2.Text = (vysledek - DruheCislo).ToString();
             }
             if (operace == "*")
             {
-                textBox1.Text = (vysledek * DruheCislo).ToString();
+                label2.Text = (vysledek * DruheCislo).ToString();
             }
             if (operace == "/")
             {
-                textBox1.Text = (vysledek / DruheCislo).ToString();
+                label2.Text = (vysledek / DruheCislo).ToString();
             }
             label1.Text = "";
             PrvniCislo = 0;
@@ -200,32 +231,129 @@ namespace kalkulacka
 
         private void button11_Click(object sender, EventArgs e)
         {
-            operace = "-";
-            PrvniCislo = float.Parse(textBox1.Text);
-            vysledek = PrvniCislo - DruheCislo;
-            DruheCislo = vysledek;
-            label1.Text = vysledek.ToString() + operace;
-            textBox1.Text = "";
+            label1.Text = label1.Text + label2.Text;
+
+            DruheCislo = float.Parse(label2.Text);
+            if (operace == "+")
+            {
+                label2.Text = (vysledek + DruheCislo).ToString();
+                vysledek = PrvniCislo + DruheCislo;
+            }
+            if (operace == "-")
+            {
+                label2.Text = (vysledek - DruheCislo).ToString();
+                vysledek = PrvniCislo - DruheCislo;
+            }
+            if (operace == "*")
+            {
+                label2.Text = (vysledek * DruheCislo).ToString();
+                vysledek = PrvniCislo * DruheCislo;
+            }
+            if (operace == "/")
+            {
+                label2.Text = (vysledek / DruheCislo).ToString();
+                vysledek = PrvniCislo / DruheCislo;
+            }
+            if (operace == "")
+            {
+                operace = "-";
+                label1.Text = label2.Text + operace;
+                vysledek = float.Parse(label2.Text);
+            }
+            else
+            {
+                operace = "-";
+                label1.Text = vysledek.ToString() + operace;
+            }
+            
+            PrvniCislo = vysledek;
+            label2.Text = "";
+            label2.Text = "0";
+
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            operace = "*";
-            PrvniCislo = float.Parse(textBox1.Text);
-            vysledek = PrvniCislo * DruheCislo;
-            DruheCislo = vysledek;
-            label1.Text = vysledek.ToString() + operace;
-            textBox1.Text = "";
+            label1.Text = label1.Text + label2.Text;
+
+            DruheCislo = float.Parse(label2.Text);
+            if (operace == "+")
+            {
+                label2.Text = (vysledek + DruheCislo).ToString();
+                vysledek = PrvniCislo + DruheCislo;
+            }
+            if (operace == "-")
+            {
+                label2.Text = (vysledek - DruheCislo).ToString();
+                vysledek = PrvniCislo - DruheCislo;
+            }
+            if (operace == "*")
+            {
+                label2.Text = (vysledek * DruheCislo).ToString();
+                vysledek = PrvniCislo * DruheCislo;
+            }
+            if (operace == "/")
+            {
+                label2.Text = (vysledek / DruheCislo).ToString();
+                vysledek = PrvniCislo / DruheCislo;
+            }
+            if (operace == "")
+            {
+                operace = "*";
+                label1.Text = label2.Text + operace;
+                vysledek = float.Parse(label2.Text);
+            }
+            else
+            {
+                operace = "*";
+                label1.Text = vysledek.ToString() + operace;
+            }
+            PrvniCislo = vysledek;
+            label2.Text = "";
+            label2.Text = "0";
         }
 
         private void button14_Click_1(object sender, EventArgs e)
         {
-            operace = "/";
-            PrvniCislo = float.Parse(textBox1.Text);
-            vysledek = PrvniCislo / DruheCislo;
-            DruheCislo = vysledek;
-            label1.Text = vysledek.ToString() + operace;
-            textBox1.Text = "";
+            
+                label1.Text = label1.Text + label2.Text;
+
+                DruheCislo = float.Parse(label2.Text);
+                if (operace == "+")
+                {
+                    label2.Text = (vysledek + DruheCislo).ToString();
+                    vysledek = PrvniCislo + DruheCislo;
+                }
+                if (operace == "-")
+                {
+                    label2.Text = (vysledek - DruheCislo).ToString();
+                    vysledek = PrvniCislo - DruheCislo;
+                }
+                if (operace == "*")
+                {
+                    label2.Text = (vysledek * DruheCislo).ToString();
+                    vysledek = PrvniCislo * DruheCislo;
+                }
+                if (operace == "/")
+                {
+                    label2.Text = (vysledek / DruheCislo).ToString();
+                    vysledek = PrvniCislo / DruheCislo;
+                }
+                if (operace == "")
+                {
+                    operace = "/";
+                    label1.Text = label2.Text + operace;
+                    vysledek = float.Parse(label2.Text);
+                }
+                else
+                {
+                    operace = "/";
+                    label1.Text = vysledek.ToString() + operace;
+                }
+                PrvniCislo = vysledek;
+                label2.Text = "";
+                label2.Text = "0";
+            
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -235,7 +363,7 @@ namespace kalkulacka
 
         private void button18_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "0";
+            label2.Text = "0";
         }
 
     }
