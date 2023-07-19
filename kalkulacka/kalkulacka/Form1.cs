@@ -16,11 +16,45 @@ namespace kalkulacka
         float DruheCislo = 0;
         float vysledek = 0;
         string operace = "";
-
         public Form1()
         {
             InitializeComponent();
             
+        }
+        public float VypocetPredchozi()
+        {
+            label1.Text = label1.Text + label2.Text;
+
+            DruheCislo = float.Parse(label2.Text);
+            if (operace == "+")
+            {
+                label2.Text = (vysledek + DruheCislo).ToString();
+                vysledek = PrvniCislo + DruheCislo;
+            }
+            if (operace == "-")
+            {
+                label2.Text = (vysledek - DruheCislo).ToString();
+                vysledek = PrvniCislo - DruheCislo;
+            }
+            if (operace == "*")
+            {
+                label2.Text = (vysledek * DruheCislo).ToString();
+                vysledek = PrvniCislo * DruheCislo;
+            }
+            if (operace == "/")
+            {
+                if (label2.Text == "0")
+                {
+                    label3.Text = "Nelze dělit nulou";
+                }
+                else
+                {
+                    label2.Text = (vysledek / DruheCislo).ToString();
+                    vysledek = PrvniCislo / DruheCislo;
+                }
+             
+            }
+            return vysledek;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -156,29 +190,7 @@ namespace kalkulacka
 
         private void button12_Click(object sender, EventArgs e)
         {
-               label1.Text = label1.Text + label2.Text;
-
-                DruheCislo = float.Parse(label2.Text);
-                if (operace == "+")
-                {
-                    label2.Text = (vysledek + DruheCislo).ToString();
-                    vysledek = PrvniCislo + DruheCislo;
-                }
-                if (operace == "-")
-                {
-                    label2.Text = (vysledek - DruheCislo).ToString();
-                    vysledek = PrvniCislo - DruheCislo;
-                }
-                if (operace == "*")
-                {
-                    label2.Text = (vysledek * DruheCislo).ToString();
-                    vysledek = PrvniCislo * DruheCislo;
-                }
-                if (operace == "/")
-                {
-                    label2.Text = (vysledek / DruheCislo).ToString();
-                    vysledek = PrvniCislo / DruheCislo;
-                }
+            float vysledek = VypocetPredchozi();
             if (operace == "")
             {
                 operace = "+";
@@ -199,7 +211,7 @@ namespace kalkulacka
         {
             PrvniCislo = 0;
             DruheCislo = 0;
-            label1.Text = "0";
+            label1.Text = "";
             label2.Text = "0";
         }
 
@@ -221,7 +233,14 @@ namespace kalkulacka
             }
             if (operace == "/")
             {
-                label2.Text = (vysledek / DruheCislo).ToString();
+                if (label2.Text == "0")
+                {
+                    label3.Text = "Nelze dělit nulou";
+                }
+                else {
+                    label2.Text = (vysledek / DruheCislo).ToString();
+                }
+                
             }
             label1.Text = "";
             PrvniCislo = 0;
@@ -231,29 +250,7 @@ namespace kalkulacka
 
         private void button11_Click(object sender, EventArgs e)
         {
-            label1.Text = label1.Text + label2.Text;
-
-            DruheCislo = float.Parse(label2.Text);
-            if (operace == "+")
-            {
-                label2.Text = (vysledek + DruheCislo).ToString();
-                vysledek = PrvniCislo + DruheCislo;
-            }
-            if (operace == "-")
-            {
-                label2.Text = (vysledek - DruheCislo).ToString();
-                vysledek = PrvniCislo - DruheCislo;
-            }
-            if (operace == "*")
-            {
-                label2.Text = (vysledek * DruheCislo).ToString();
-                vysledek = PrvniCislo * DruheCislo;
-            }
-            if (operace == "/")
-            {
-                label2.Text = (vysledek / DruheCislo).ToString();
-                vysledek = PrvniCislo / DruheCislo;
-            }
+            float vysledek = VypocetPredchozi();
             if (operace == "")
             {
                 operace = "-";
@@ -274,29 +271,7 @@ namespace kalkulacka
 
         private void button16_Click(object sender, EventArgs e)
         {
-            label1.Text = label1.Text + label2.Text;
-
-            DruheCislo = float.Parse(label2.Text);
-            if (operace == "+")
-            {
-                label2.Text = (vysledek + DruheCislo).ToString();
-                vysledek = PrvniCislo + DruheCislo;
-            }
-            if (operace == "-")
-            {
-                label2.Text = (vysledek - DruheCislo).ToString();
-                vysledek = PrvniCislo - DruheCislo;
-            }
-            if (operace == "*")
-            {
-                label2.Text = (vysledek * DruheCislo).ToString();
-                vysledek = PrvniCislo * DruheCislo;
-            }
-            if (operace == "/")
-            {
-                label2.Text = (vysledek / DruheCislo).ToString();
-                vysledek = PrvniCislo / DruheCislo;
-            }
+            float vysledek = VypocetPredchozi();
             if (operace == "")
             {
                 operace = "*";
@@ -315,31 +290,9 @@ namespace kalkulacka
 
         private void button14_Click_1(object sender, EventArgs e)
         {
-            
-                label1.Text = label1.Text + label2.Text;
 
-                DruheCislo = float.Parse(label2.Text);
-                if (operace == "+")
-                {
-                    label2.Text = (vysledek + DruheCislo).ToString();
-                    vysledek = PrvniCislo + DruheCislo;
-                }
-                if (operace == "-")
-                {
-                    label2.Text = (vysledek - DruheCislo).ToString();
-                    vysledek = PrvniCislo - DruheCislo;
-                }
-                if (operace == "*")
-                {
-                    label2.Text = (vysledek * DruheCislo).ToString();
-                    vysledek = PrvniCislo * DruheCislo;
-                }
-                if (operace == "/")
-                {
-                    label2.Text = (vysledek / DruheCislo).ToString();
-                    vysledek = PrvniCislo / DruheCislo;
-                }
-                if (operace == "")
+            float vysledek = VypocetPredchozi();
+            if (operace == "")
                 {
                     operace = "/";
                     label1.Text = label2.Text + operace;
